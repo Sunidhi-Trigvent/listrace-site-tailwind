@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Toparea from "./toparea";
 
-function Header({ activeSection }) {
+function Header({ activeSection, setActiveSection }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // Toggle menu visibility
@@ -17,12 +17,21 @@ function Header({ activeSection }) {
     return "text-black"; // Default text color
   };
 
+  // Function to handle clicks on navigation links
+  const handleNavClick = (section) => {
+    setActiveSection(section);
+    const sectionElement = document.getElementById(section);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" }); // Scroll to the clicked section smoothly
+    }
+  };
+
   return (
     <>
       <Toparea />
 
       {/* Header section */}
-      <section className={`sticky top-0 z-50 bg-white shadow-lg`}>
+      <section className="sticky top-0 z-50 bg-white shadow-lg">
         <div className="relative items-center p-8 lg:flex lg:justify-between">
           {/* Container for hamburger button and logo */}
           <div className="flex w-full items-center justify-between lg:w-auto">
@@ -51,6 +60,7 @@ function Header({ activeSection }) {
               <a
                 href="#home"
                 className={`${getTextColor("home")} hover:text-red-600`}
+                onClick={() => handleNavClick("home")}
               >
                 HOME
               </a>
@@ -59,6 +69,7 @@ function Header({ activeSection }) {
               <a
                 href="#how"
                 className={`${getTextColor("how")} hover:text-red-600`}
+                onClick={() => handleNavClick("how")}
               >
                 HOW IT WORKS
               </a>
@@ -67,6 +78,7 @@ function Header({ activeSection }) {
               <a
                 href="#explore"
                 className={`${getTextColor("explore")} hover:text-red-600`}
+                onClick={() => handleNavClick("explore")}
               >
                 EXPLORE
               </a>
@@ -75,6 +87,7 @@ function Header({ activeSection }) {
               <a
                 href="#reviews"
                 className={`${getTextColor("reviews")} hover:text-red-600`}
+                onClick={() => handleNavClick("reviews")}
               >
                 REVIEW
               </a>
@@ -83,6 +96,7 @@ function Header({ activeSection }) {
               <a
                 href="#blog"
                 className={`${getTextColor("blog")} hover:text-red-600`}
+                onClick={() => handleNavClick("blog")}
               >
                 BLOG
               </a>
@@ -91,6 +105,7 @@ function Header({ activeSection }) {
               <a
                 href="#contact"
                 className={`${getTextColor("contact")} hover:text-red-600`}
+                onClick={() => handleNavClick("contact")}
               >
                 CONTACT
               </a>

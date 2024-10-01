@@ -7,11 +7,20 @@ import Explore from "./Explore";
 function Home() {
   const [activeSection, setActiveSection] = useState("home");
 
+  // Handle setting the active section from ScrollSpy
+  const handleScrollUpdate = (activeElement) => {
+    setActiveSection(activeElement.id);
+  };
+
   return (
     <>
-      <Header activeSection={activeSection} />
+      {/* Pass activeSection and setActiveSection to Header */}
+      <Header
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+      />
 
-      <ScrollSpy onActiveChange={setActiveSection}>
+      <ScrollSpy onUpdate={handleScrollUpdate} scrollThrottle={100}>
         <section id="home">
           {/* Home section content */}
           <div
@@ -39,7 +48,7 @@ function Home() {
         </section>
 
         <section id="explore">
-          {/* How section content */}
+          {/* Explore section content */}
           <Explore />
         </section>
       </ScrollSpy>
