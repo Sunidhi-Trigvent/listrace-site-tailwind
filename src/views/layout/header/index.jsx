@@ -14,7 +14,9 @@ function Header() {
       <Toparea />
 
       {/* Header section */}
-      <section>
+      <section className="sticky top-0 z-50 bg-white shadow-lg">
+        {" "}
+        {/* Add sticky class */}
         <div className="relative items-center p-8 lg:flex lg:justify-between">
           {/* Container for hamburger button and logo */}
           <div className="flex w-full items-center justify-between lg:w-auto">
@@ -35,7 +37,7 @@ function Header() {
 
           {/* Navigation Menu */}
           <ul
-            className={`mt-4 w-full bg-white transition-all duration-300 ease-in-out lg:static lg:mt-0 lg:flex lg:space-x-8 lg:bg-transparent ${
+            className={`mt-4 w-full transition-all duration-300 ease-in-out lg:static lg:mt-0 lg:flex lg:space-x-8 lg:bg-transparent ${
               menuOpen ? "block" : "hidden"
             } left-0 ml-0 mt-2 md:left-auto md:ml-0 md:mt-0 md:w-auto lg:ml-0 lg:w-auto`}
           >
