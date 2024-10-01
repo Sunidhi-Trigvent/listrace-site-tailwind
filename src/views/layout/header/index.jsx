@@ -10,14 +10,17 @@ function Header() {
       {/* Header section */}
 
       <section>
-        <div className="flex justify-between p-8">
+        <div className="p-8 md:flex md:justify-between">
           <span>
             <a href="/">
               List <span>Race</span>
             </a>
           </span>
           <span>
-            <ul className="flex space-x-8">
+            <div className="md:hidden">
+              <a href="#">&#8801;</a>
+            </div>
+            <ul className="space-x-8 md:flex">
               <li className="scroll active">
                 <a href="#home">HOME</a>
               </li>

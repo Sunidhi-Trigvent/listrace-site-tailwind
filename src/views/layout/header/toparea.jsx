@@ -3,9 +3,9 @@ import React from "react";
 function Toparea() {
   return (
     <>
-      <header className="h-10 w-full bg-slate-300">
-        <div className="flex justify-between p-2">
-          <span>
+      <header className="bg-slate-300 md:h-10 md:w-full">
+        <div className="p-2 md:flex md:justify-between">
+          <span className="">
             <select className="mx-1">
               <option value="EN">EN</option>
               <option value="BN">BN</option>
