@@ -2,10 +2,10 @@ import React from "react";
 
 function Toparea() {
   return (
-    <header className="bg-slate-300 py-2 md:py-0">
-      <div className="flex flex-col items-center p-2 md:h-10 md:w-full md:flex-row md:justify-between">
+    <header className="bg-slate-300 py-2 lg:py-0">
+      <div className="flex flex-col items-center p-2 lg:h-10 lg:w-full lg:flex-row lg:justify-between">
         {/* Language and Currency Selection */}
-        <div className="flex flex-col items-center space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0 md:space-x-4">
+        <div className="flex flex-col items-center space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0 lg:space-x-4">
           <select className="mx-1 rounded border p-1">
             <option value="EN">EN</option>
             <option value="BN">BN</option>

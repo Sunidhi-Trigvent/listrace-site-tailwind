@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-// import { Link } from "react-router-dom";
 import Toparea from "./toparea";
 
 function Header() {
@@ -17,43 +15,46 @@ function Header() {
 
       {/* Header section */}
       <section>
-        <div className="p-8 md:flex md:justify-between">
-          {/* Logo */}
-          <span>
-            <a href="/">
-              List <span>Race</span>
-            </a>
-          </span>
+        <div className="relative items-center p-8 lg:flex lg:justify-between">
+          {/* Container for hamburger button and logo */}
+          <div className="flex w-full items-center justify-between lg:w-auto">
+            {/* Hamburger Menu (Visible on Mobile/Tablet) */}
+            <div className="lg:hidden">
+              <button onClick={toggleMenu} className="text-2xl">
+                &#8801;
+              </button>
+            </div>
 
-          {/* Hamburger Menu (Visible on Mobile/Tablet) */}
-          <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-2xl">
-              &#8801;
-            </button>
+            {/* Logo */}
+            <span className="w-full text-center lg:w-auto">
+              <a href="/">
+                List <span>Race</span>
+              </a>
+            </span>
           </div>
 
           {/* Navigation Menu */}
           <ul
-            className={`space-x-8 md:flex md:space-x-8 ${
+            className={`mt-4 w-full bg-white transition-all duration-300 ease-in-out lg:static lg:mt-0 lg:flex lg:space-x-8 lg:bg-transparent ${
               menuOpen ? "block" : "hidden"
-            } mt-4 md:mt-0`}
+            } left-0 ml-0 mt-2 md:left-auto md:ml-0 md:mt-0 md:w-auto lg:ml-0 lg:w-auto`}
           >
-            <li className="scroll active">
+            <li className="scroll px-4 py-2 lg:px-0 lg:py-0">
               <a href="#home">HOME</a>
             </li>
-            <li className="scroll">
+            <li className="scroll px-4 py-2 lg:px-0 lg:py-0">
               <a href="#works">HOW IT WORKS</a>
             </li>
-            <li className="scroll">
+            <li className="scroll px-4 py-2 lg:px-0 lg:py-0">
               <a href="#explore">EXPLORE</a>
             </li>
-            <li className="scroll">
+            <li className="scroll px-4 py-2 lg:px-0 lg:py-0">
               <a href="#reviews">REVIEW</a>
             </li>
-            <li className="scroll">
+            <li className="scroll px-4 py-2 lg:px-0 lg:py-0">
               <a href="#blog">BLOG</a>
             </li>
-            <li className="scroll">
+            <li className="scroll px-4 py-2 lg:px-0 lg:py-0">
               <a href="#contact">CONTACT</a>
             </li>
           </ul>
